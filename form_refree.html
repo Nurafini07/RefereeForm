@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>REFEREE REPORT FORM</title>
+  <!-- Include your CSS files -->
+  <link rel="stylesheet" type="text/css" href="form_referee.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="confidential-text">Confidential</div>
+  <div id="siswazah-text">INSTITUT PENGAJIAN SISWAZAH</div>
+
+
+  <header>
+    <img src="C:\newxampp\htdocs\ICT600\Assignment\uitm logo.png" alt="UiTM Logo" id="uitm-logo">
+    <h1>REFEREE REPORT FORM</h1>
+    <nav>
+      <a href="mainpage.html">Main Page</a>
+      <a href="profile.html">My Profile</a>
+    </nav>
+  </header>
+
+  <form id="referee-form" method="post" action="http://ss1.ciwcertified.com/cgi-bin/process.p1" onsubmit="return validateForm()">
+    <fieldset>
+      <legend>SECTION A: TO BE COMPLETED BY APPLICANT</legend>
+      Applicant's Name:<br>
+      <input type="text" name="applicant_name" required><span class="required"></span><br>
+      I.C No./Passport No:<br>
+      <input type="text" name="applicant_ic_passport" required><span class="required"></span><br>
+      Post Graduate Degree applied for:<br>
+      <input type="text" name="applicant_degree_applied" required><span class="required"></span><br>
+      Faculty:<br>
+      <input type="text" name="applicant_faculty" required><span class="required"></span><br>
+      Proposed Research Area:<br>
+      <input type="text" name="applicant_research_area" required><span class="required"></span><br>
+      <!-- Add a field for email -->
+      Email:<br>
+      <input type="email" name="applicant_email" id="applicant_email" onblur="validateEmail()" required><span class="required"></span><br>
+      </fieldset>
+
+    <fieldset>
+      <legend>SECTION B: TO BE COMPLETED BY THE REFEREE<br>One of whom must be an academic referee</legend>
+      Name of Referee:<br>
+    <input type="text" name="referee_name" required><span class="required"></span><br>
+    Title:<br>
+    <input type="text" name="referee_title" required><span class="required"></span><br>
+    Address of Organization:<br>
+    <input type="text" name="referee_address" required><span class="required"></span><br>
+    Phone Number:<br>
+    <input type="text" name="referee_phone_number" id="referee_phone_number" onblur="validatePhoneNumber()" required><span class="required"></span><br>
+    Fax Number:<br>
+    <input type="text" name="referee_fax_number" required><span class="required"></span><br>
+    Email:<br>
+    <input type="email" name="referee_email" id="referee_email" onblur="validateEmail()" required><span class="required"></span><br>
+
+    <h3>1. Knowledge of The Applicant</h3>
+      <label for="years">Approximately how long have you known this applicant:</label>
+      <input type="text" id="years" name="years" placeholder="Enter years" required><span class="required"></span>
+
+      <label>How well do you know the applicant? Kindly choose one:</label>
+      <div class="radio-group">
+        <input type="radio" id="casually" name="knowledge" value="Casually" />
+        <label for="casually">Casually</label>
+
+        <input type="radio" id="well" name="knowledge" value="Well" />
+        <label for="well">Well</label>
+
+        <input type="radio" id="very-well" name="knowledge" value="Very Well" />
+        <label for="very-well">Very Well</label>
+      </div>
+
+      <label for="capacity">In what capacity have you known about the applicant? Kindly choose one:</label>
+      <div class="radio-group">
+        <input type="radio" id="lecturer" name="capacity" value="Lecturer" />
+        <label for="lecturer">Lecturer</label>
+
+        <input type="radio" id="research" name="capacity" value="Research" />
+        <label for="research">Research</label>
+
+        <input type="radio" id="advisor" name="capacity" value="Advisor" />
+        <label for="advisor">Advisor</label>
+
+        <input type="radio" id="employer" name="capacity" value="Employer" />
+        <label for="employer">Employer</label>
+
+        <input type="radio" id="others" name="capacity" value="Others" />
+        <label for="others">Others (specify)</label>
+      </div>
+      <input type="text" id="others-specify" name="others-specify" placeholder="Specify" />
+
+      <h3>2. Evaluation</h3>
+      <table>
+        <tr>
+          <th>Others</th>
+          <th>Rank</th>
+          <th>Remarks</th>
+        </tr>
+        <tr>
+          <td>Knowledge in the area of proposed study</td>
+          <td>
+            <select name="knowledge_rank" required><span class="required"></span>
+              <option value="0">0 - Unable to rank</option>
+              <option value="1">1 - Poor</option>
+              <option value="2">2 - Fair</option>
+              <option value="3">3 - Good</option>
+              <option value="4">4 - Very Good</option>
+              <option value="5">5 - Outstanding</option>
+            </select>
+          </td>
+          <td><input type="text" name="knowledge_remarks"</td>
+        </tr>
+        <tr>
+            <td>Knowledge in area of proposed study</td>
+            <td>
+              <select name="knowledge_rank" required><span class="required"></span>
+                <option value="0">0 - Unable to rank</option>
+                <option value="1">1 - Poor</option>
+                <option value="2">2 - Fair</option>
+                <option value="3">3 - Good</option>
+                <option value="4">4 - Very Good</option>
+                <option value="5">5 - Outstanding</option>
+              </select>
+            </td>
+            <td><input type="text" name="knowledge_remarks"</td>
+          </tr>
+          <tr>
+              <td>Ability to grasp new concepts</td>
+              <td>
+                <select name="knowledge_rank" required><span class="required"></span>
+                  <option value="0">0 - Unable to rank</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2 - Fair</option>
+                  <option value="3">3 - Good</option>
+                  <option value="4">4 - Very Good</option>
+                  <option value="5">5 - Outstanding</option>
+                </select>
+              </td>
+              <td><input type="text" name="knowledge_remarks"</td>
+            </tr>
+            <tr>
+              <td>Originality, intellectual creativity</td>
+              <td>
+                <select name="knowledge_rank" required><span class="required"></span>
+                  <option value="0">0 - Unable to rank</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2 - Fair</option>
+                  <option value="3">3 - Good</option>
+                  <option value="4">4 - Very Good</option>
+                  <option value="5">5 - Outstanding</option>
+                </select>
+              </td>
+              <td><input type="text" name="knowledge_remarks"</td>
+            </tr>
+            <tr>
+              <td>Mathematical and logical thought</td>
+              <td>
+                <select name="knowledge_rank" required><span class="required"></span>
+                  <option value="0">0 - Unable to rank</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2 - Fair</option>
+                  <option value="3">3 - Good</option>
+                  <option value="4">4 - Very Good</option>
+                  <option value="5">5 - Outstanding</option>
+                </select>
+              </td>
+              <td><input type="text" name="knowledge_remarks"</td>
+            </tr>
+            <tr>
+              <td>Written communication skills</td>
+              <td>
+                <select name="knowledge_rank" required><span class="required"></span>
+                  <option value="0">0 - Unable to rank</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2 - Fair</option>
+                  <option value="3">3 - Good</option>
+                  <option value="4">4 - Very Good</option>
+                  <option value="5">5 - Outstanding</option>
+                </select>
+              </td>
+              <td><input type="text" name="knowledge_remarks"</td>
+            </tr>
+            <tr>
+              <td>Oral communication skills</td>
+              <td>
+                <select name="knowledge_rank" required><span class="required"></span>
+                  <option value="0">0 - Unable to rank</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2 - Fair</option>
+                  <option value="3">3 - Good</option>
+                  <option value="4">4 - Very Good</option>
+                  <option value="5">5 - Outstanding</option>
+                </select>
+              </td>
+              <td><input type="text" name="knowledge_remarks"</td>
+            </tr>
+            <tr>
+              <td>Teaching ability(if known)</td>
+              <td>
+                <select name="knowledge_rank" required><span class="required"></span>
+                  <option value="0">0 - Unable to rank</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2 - Fair</option>
+                  <option value="3">3 - Good</option>
+                  <option value="4">4 - Very Good</option>
+                  <option value="5">5 - Outstanding</option>
+                </select>
+              </td>
+              <td><input type="text" name="knowledge_remarks"</td>
+            </tr>
+            <tr>
+              <td>Research ability(if known)</td>
+              <td>
+                <select name="knowledge_rank" required><span class="required"></span>
+                  <option value="0">0 - Unable to rank</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2 - Fair</option>
+                  <option value="3">3 - Good</option>
+                  <option value="4">4 - Very Good</option>
+                  <option value="5">5 - Outstanding</option>
+                </select>
+              </td>
+              <td><input type="text" name="knowledge_remarks"</td>
+            </tr>
+            <tr>
+              <td>Perseverance toward goals</td>
+              <td>
+                <select name="knowledge_rank" required><span class="required"></span>
+                  <option value="0">0 - Unable to rank</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2 - Fair</option>
+                  <option value="3">3 - Good</option>
+                  <option value="4">4 - Very Good</option>
+                  <option value="5">5 - Outstanding</option>
+                </select>
+              </td>
+              <td><input type="text" name="knowledge_remarks"</td>
+            </tr>
+            <tr>
+              <td>Maturity and emotional stability</td>
+              <td>
+                <select name="knowledge_rank" required><span class="required"></span>
+                  <option value="0">0 - Unable to rank</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2 - Fair</option>
+                  <option value="3">3 - Good</option>
+                  <option value="4">4 - Very Good</option>
+                  <option value="5">5 - Outstanding</option>
+                </select>
+              </td>
+              <td><input type="text" name="knowledge_remarks"</td>
+            <tr>
+              <td>Ability to work well with others</td>
+              <td>
+                <select name="knowledge_rank" required><span class="required"></span>
+                  <option value="0">0 - Unable to rank</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2 - Fair</option>
+                  <option value="3">3 - Good</option>
+                  <option value="4">4 - Very Good</option>
+                  <option value="5">5 - Outstanding</option>
+                </select>
+              </td>
+              <td><input type="text" name="knowledge_remarks"</td>
+            </tr>
+            <tr>
+              <td>General preparation for post-graduate work</td>
+              <td>
+                <select name="knowledge_rank" required><span class="required"></span>
+                  <option value="0">0 - Unable to rank</option>
+                  <option value="1">1 - Poor</option>
+                  <option value="2">2 - Fair</option>
+                  <option value="3">3 - Good</option>
+                  <option value="4">4 - Very Good</option>
+                  <option value="5">5 - Outstanding</option>
+                </select>
+              </td>
+              <td><input type="text" name="knowledge_remarks"</td>
+            </tr>
+        </table>
+
+      <h3>3. Recommendation</h3>
+      <label>Considering this applicant's academic record, special abilities, ambition, and determination. Kindly indicate your recommendation and choose one:</label>
+      <div class="radio-group">
+        <input type="radio" id="recommend_strong" name="recommendation" value="Recommend Strongly"/>
+        <label for="recommend_strong">Recommend Strongly</label>
+
+        <input type="radio" id="recommend" name="recommendation" value="Recommend"/>
+        <label for="recommend">Recommend</label>
+
+        <input type="radio" id="recommend_with_reservation" name="recommendation" value="Recommend with reservation"/>
+        <label for="recommend_with_reservation">Recommend with reservation</label>
+
+        <input type="radio" id="cannot_recommend" name="recommendation" value="Cannot Recommend"/>
+        <label for="cannot_recommend">Cannot Recommend</label>
+      </div>
+
+      <h3>4. Additional Comments</h3>
+      <label>Please add any comments that you feel will assist in evaluating the applicant's potential to pursue postgraduate study.</label>
+      <!-- Textarea for additional comments -->
+      <textarea name="additional_comments" id="additional_comments" rows="4" cols="50"></textarea>
+
+      <div id="email-error" class="error-messages"></div>
+      <div id="phone-error" class="error-messages"></div>
+      <div id="form-error" class="error-messages"></div>
+
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </fieldset>
+  </form>
+
+  <div id="output-section">
+    <!-- Output content will be displayed here -->
+  </div>
+
+  <script>
+    document.getElementById('referee-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the form from actually submitting
+
+      // Collect form data
+      var formData = new FormData(this);
+      var outputContent = '<h2>Form Submission Data</h2><ul>';
+
+      // Iterate over form data and create a list of key-value pairs
+      for (var pair of formData.entries()) {
+        outputContent += '<li><strong>' + pair[0] + ':</strong> ' + pair[1] + '</li>';
+      }
+
+      outputContent += '</ul>';
+
+      // Display the output in the output section
+      var outputSection = document.getElementById('output-section');
+      outputSection.innerHTML = outputContent;
+    });
+
+    function validateEmail() {
+    var email = document.getElementsByName('referee_email')[0].value;
+    var isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (!isValidEmail) {
+      document.getElementById('email-error').innerHTML = '<p>Please enter a valid email address.</p>';
+      return false;
+    }
+
+    document.getElementById('email-error').innerHTML = '';
+    return true;
+  }
+
+  // Function to validate phone number (accepts only numeric values)
+  function validatePhoneNumber() {
+    var phoneNumber = document.getElementsByName('referee_phone_number')[0].value;
+    var isNumeric = /^\d+$/.test(phoneNumber);
+
+    if (!isNumeric) {
+      document.getElementById('phone-error').innerHTML = '<p>Please enter a valid phone number.</p>';
+      return false;
+    }
+
+    document.getElementById('phone-error').innerHTML = '';
+    return true;
+  }
+
+  function validateForm() {
+    var requiredFields = ['applicant_name', 'referee_name', 'knowledge_rank', 'knowledge_remarks', 'recommendation'];
+
+    if (!validateEmail() || !validatePhoneNumber()) {
+      return false;
+    }
+
+    for (var i = 0; i < requiredFields.length; i++) {
+      var field = document.getElementsByName(requiredFields[i])[0].value;
+      if (field === "") {
+        document.getElementById('form-error').innerHTML = '<p>Please fill in all required fields.</p>';
+        return false;
+      }
+    }
+
+      // If all required fields are filled, clear error message
+      document.getElementById('error').innerHTML = '';
+      return true; // Allow form submission
+    }
+  </script>
+</body>
+</html>
